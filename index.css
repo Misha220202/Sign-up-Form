@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --right-side-padding: 2% 12% 2% 4%;
+    --header-font: 600 1.1rem sans-serif;
+    --form-label-font: normal 0.6rem sans-serif;
+    --form-border-initial: 1px solid #E5E7EB;
+    --form-border-focus: 1px solid blue;
+    --form-border-invalid: 1px solid red;
+    --shadow-color: #d4d6da;
+    --button-color: #596D48;
+}
+
+@font-face {
+    font-family: my-font;
+    src: url(./Norse-Bold.otf);
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    margin: 0 15%;
+    background-color: black;
+}
+
+.leftSideContainer {
+    flex: 1;
+    position: relative;
+    min-width: fit-content;
+    background-image: url(./halie-west-25xggax4bSA-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 15%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 25%;
+    padding: 0.5rem 0;
+}
+
+.logoContainer>img {
+    max-height: 100%;
+}
+
+.logoContainer>span {
+    margin-top: 6%;
+    color: white;
+    font-size: 5rem;
+    font-family: my-font;
+}
+
+.footer {
+    position: absolute;
+    bottom: 1%;
+    color: white;
+    font-size: 0.7rem;
+    width: 100%;
+    text-align: center;
+}
+
+.footer a {
+    color: inherit;
+}
+
+.rightSideContainer {
+    flex: 2;
+    background-color: rgb(238, 238, 238);
+}
+
+.headerContainer {
+    height: 35%;
+    padding: var(--right-side-padding);
+    padding-top: 15%;
+    font: var(--header-font);
+}
+
+.headerContainer>p:last-child {
+    margin-top: 2%;
+}
+
+.formContainer {
+    height: 30%;
+    padding: var(--right-side-padding);
+    background-color: white;
+    box-shadow: 0 5px 5px var(--shadow-color);
+}
+
+.formContainer>p:first-child {
+    font: var(--header-font);
+}
+
+form {
+    margin: 2% 15% 2% 0;
+}
+
+fieldset {
+    display: flex;
+    border: none;
+    justify-content: space-between;
+    margin-bottom: 2%;
+}
+
+fieldset>div {
+    width: 50%;
+}
+
+label {
+    font: var(--form-label-font)
+}
+
+input {
+    height: 60%;
+    width: 80%;
+    padding-left: 1%;
+    border: var(--form-border-initial);
+    border-radius: 3px;
+}
+
+input:required {
+    border: var(--form-border-initial);
+}
+
+input:focus {
+    outline: none;
+    border: var(--form-border-focus);
+    box-shadow: 2px 2px 5px var(--shadow-color);
+}
+
+input:invalid,
+.password-mismatch {
+    border: var(--form-border-invalid);
+}
+
+.signUpContainer {
+    height: 35%;
+    padding: var(--right-side-padding);
+    font: normal 0.9rem sans-serif;
+}
+
+.signUpContainer>button {
+    margin: 1rem 0;
+    padding: 0.7rem 2.5rem;
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 7px;
+    color: white;
+}
+
+.signUpContainer>button:hover {
+    cursor: pointer;
+}
+
+.signUpContainer>button:active {
+    scale: 0.98;
+}
+
+.signUpContainer>p {
+    margin: 0.5rem 0;
+}
+
+.signUpContainer>p>a {
+    color: var(--button-color);
+    text-decoration: none;
+}

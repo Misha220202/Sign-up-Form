@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up Form</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="/index.js" defer></script>
+</head>
+
+<body>
+    <div class="leftSideContainer">
+        <div class="logoContainer">
+            <img src="./odin-lined.png" alt="odin-logo">
+            <span>ODIN</span>
+        </div>
+        <div class="footer">
+            <p>Photo by <a href="https://unsplash.com/@haliewestphoto" target="_blank">Halie West</a> on <a
+                    href="https://unsplash.com/" target="_blank">Unsplash</a></p>
+        </div>
+    </div>
+    <div class="rightSideContainer">
+        <div class="headerContainer">
+            <p>This is not a real online service! You know you need something like this in your life to help you realize
+                your deepest dreams.</p>
+            <p>Sign up <i>now</i> to get started.</p>
+            <p>You <i>know</i> you want to.</p>
+        </div>
+        <div class="formContainer">
+            <p>Let's do this!</p>
+            <form action="#" method="post">
+                <fieldset>
+                    <div>
+                        <label for="first_name">FIRST NAME</label><br>
+                        <input type="text" id="first_name" name="first_name" pattern="[A-Za-z]*" maxlength="10">
+                    </div>
+                    <div>
+                        <label for="last_name">LAST NAME</label><br>
+                        <input type="text" id="last_name" name="last_name" pattern="[A-Za-z]*" maxlength="10">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div>
+                        <label for="email">EMAIL</label><br>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div>
+                        <label for="phone_number">PHONE NUMBER</label><br>
+                        <input type="text" id="phone_number" name="phone_number" pattern="[0-9\-]{12}" maxlength="12"
+                            placeholder="000-000-0000">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div>
+                        <label for="password">PASSWORD</label><br>
+                        <input type="password" id="password" name="password" pattern=".{6,}">
+                    </div>
+                    <div>
+                        <label for="confirm_password">CONFIRM PASSWORD</label><br>
+                        <input type="password" id="confirm_password" name="confirm_password" pattern=".{6,}">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="signUpContainer">
+            <button type="submit">Create Account</button>
+            <p>Already have an account? <a href="" target="_blank">Log in</a></p>
+        </div>
+    </div>
+</body>
+
+</html>
