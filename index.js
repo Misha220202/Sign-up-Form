@@ -47,5 +47,22 @@ function checkPassword() {
 password.addEventListener('input', checkPassword);
 confirm_password.addEventListener('input', checkPassword);
 
-document.querySelector('button').addEventListener('mouseenter', event => button.focus());
-document.querySelector('button').addEventListener('click', event => location.reload());
+const inputs = document.querySelectorAll('input');
+
+inputs.forEach(input => {
+    input.addEventListener('focus', () => input.classList.remove('invalid'))
+})
+
+document.querySelector('button').addEventListener('click', event => {
+    event.preventDefault(); //组织表单提交
+    inputs.forEach((input) => {
+        if (input.hasAttribute('pattern')) {
+            var pattern = new RegExp(input.getAttribute('pattern'));
+            if (!pattern.test(input.value) || !input.value) {
+                input.classList.add('invalid');
+            } else {
+                input.classList.remove('invalid');
+            }
+        }
+    });
+});

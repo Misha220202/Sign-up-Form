@@ -103,6 +103,10 @@ form {
     margin: 2% 15% 2% 0;
 }
 
+form span {
+    font-size: 0.8rem;
+}
+
 fieldset {
     display: flex;
     border: none;
@@ -126,10 +130,6 @@ input {
     border-radius: 3px;
 }
 
-input:required {
-    border: var(--form-border-initial);
-}
-
 input:focus {
     outline: none;
     border: var(--form-border-focus);
@@ -137,7 +137,8 @@ input:focus {
 }
 
 input:invalid,
-.password-mismatch {
+.password-mismatch,
+.invalid {
     border: var(--form-border-invalid);
 }
 
