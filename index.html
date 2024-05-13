@@ -43,7 +43,7 @@
                 <fieldset>
                     <div>
                         <label for="email"><span>*</span>EMAIL</label><br>
-                        <input type="email" id="email" name="email" pattern="/^[^\s@]+@[^\s@]+\.[^\s@]+$/">
+                        <input type="email" id="email" name="email">
                     </div>
                     <div>
                         <label for="phone_number"><span>*</span>PHONE NUMBER</label><br>
@@ -61,6 +61,7 @@
                         <input type="password" id="confirm_password" name="confirm_password" pattern=".{6,}">
                     </div>
                 </fieldset>
+                <p class="hint hidden">*Passwords do not match</p>
             </form>
         </div>
         <div class="signUpContainer">

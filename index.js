@@ -3,7 +3,6 @@ function toUpperCase(event) {
     value = value.toUpperCase();
     event.target.value = value;
 }
-
 document.querySelector('#first_name').addEventListener('input', toUpperCase);
 document.querySelector('#last_name').addEventListener('input', toUpperCase);
 
@@ -20,49 +19,37 @@ document.querySelector('#phone_number').addEventListener('input', event => {
 
 const password = document.querySelector('#password');
 const confirm_password = document.querySelector('#confirm_password');
-
+const hint = document.querySelector('.hint');
+let passwordChecked = false;
 function checkPassword() {
-    const form = document.querySelector('form');
-    let password1 = password.value;
-    let password2 = confirm_password.value;
+    const password1 = password.value;
+    const password2 = confirm_password.value;
     if (password1 !== password2) {
+        passwordChecked = false;
+        hint.classList.remove('hidden');
+        hint.classList.add('show');
         password.classList.add('password-mismatch');
         confirm_password.classList.add('password-mismatch');
-        if (form.lastElementChild.tagName.toLowerCase() === 'fieldset') {
-            const note = document.createElement('p');
-            note.textContent = '*Passwords do not match';
-            note.style.color = 'red';
-            note.style.fontSize = '0.7rem';
-            form.appendChild(note);
-        }
     } else {
+        passwordChecked = true;
+        hint.classList.remove('show');
+        hint.classList.add('hidden');
         password.classList.remove('password-mismatch');
         confirm_password.classList.remove('password-mismatch');
-        if (form.lastElementChild.tagName.toLowerCase() === 'p') {
-            form.removeChild(form.lastElementChild);
-        }
     }
 }
-
 password.addEventListener('input', checkPassword);
 confirm_password.addEventListener('input', checkPassword);
 
-const inputs = document.querySelectorAll('input');
-
-inputs.forEach(input => {
-    input.addEventListener('focus', () => input.classList.remove('invalid'))
-})
-
-document.querySelector('button').addEventListener('click', event => {
-    event.preventDefault(); //组织表单提交
-    inputs.forEach((input) => {
-        if (input.hasAttribute('pattern')) {
-            var pattern = new RegExp(input.getAttribute('pattern'));
-            if (!pattern.test(input.value) || !input.value) {
-                input.classList.add('invalid');
-            } else {
-                input.classList.remove('invalid');
-            }
+document.querySelector('button').addEventListener('click', (event) => {
+    let allValid = true;
+    document.querySelectorAll('input').forEach(input => {
+        if (!(input.validity.valid == true && input.value && passwordChecked == true)) {
+            allValid = false;
+            event.preventDefault();
         }
-    });
+    })
+    if (allValid) { location.reload(); }
 });
+
+
