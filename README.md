@@ -1,5 +1,7 @@
 # Sign-up-Form
 
+## Overview
+
 This JavaScript script is designed to enhance user experience by implementing real-time form validation. It transforms user input, ensuring that certain fields follow specific formatting rules, such as uppercase letters for names and formatted phone numbers. It also validates password entries to confirm that they match before submission.
 
 ## Features
